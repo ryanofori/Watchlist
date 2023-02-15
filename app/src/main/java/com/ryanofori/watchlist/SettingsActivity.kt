@@ -1,6 +1,5 @@
 package com.ryanofori.watchlist
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -11,13 +10,12 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ryanofori.watchlist.ui.theme.WatchlistTheme
 
-class MainActivity : ComponentActivity() {
+class SettingsActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -27,7 +25,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    MainScaffold()
+                    MainScaffold2()
                 }
             }
         }
@@ -35,32 +33,22 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MainScaffold() {
-    val context = LocalContext.current
+fun MainScaffold2() {
     Column {
         TopAppBar(
             elevation = 4.dp,
-            title = {Text(stringResource(id = R.string.app_name))},
-            backgroundColor = MaterialTheme.colors.primary,
-            navigationIcon = {},
-            actions = {
-                IconButton(onClick = {
-                    context.startActivity(Intent(context, SettingsActivity::class.java))
-                }) {
-                    Icon(Icons.Default.Settings, null)
-                }
-            }
+            title = {Text("Settings")},
+            backgroundColor = MaterialTheme.colors.primary
         )
         Text("Hello")
     }
 
 }
 
-
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
+fun DefaultPreview2() {
     WatchlistTheme {
-        MainScaffold()
+        MainScaffold2()
     }
 }
