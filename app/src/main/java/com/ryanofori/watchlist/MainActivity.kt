@@ -6,6 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -36,7 +38,13 @@ fun MainScaffold() {
         TopAppBar(
             elevation = 4.dp,
             title = {Text(stringResource(id = R.string.app_name))},
-            backgroundColor = MaterialTheme.colors.primary
+            backgroundColor = MaterialTheme.colors.primary,
+            navigationIcon = {},
+            actions = {
+                IconButton(onClick = { /*TODO*/ }) {
+                    Icon(Icons.Default.Settings, null)
+                }
+            }
         )
         Text("Hello")
     }
